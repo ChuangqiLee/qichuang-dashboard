@@ -1,0 +1,23 @@
+# Python / tools
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+# local settings and secrets
+.env
+.env.*
+# run-time leftovers
+*.log
+*.pid
+*.bak
+*.tmp
+.DS_Store
+# dashboard test artefacts (screenshots, browser profiles)
+dashboard/tests/shots/
+dashboard/tests/review_*/
+dashboard/tests/baseline_before_enh/
+**/chprof/
+# patient-derived images must never be committed (see 使用指南.md §8)
+results/cases/
+runs/*/samples/

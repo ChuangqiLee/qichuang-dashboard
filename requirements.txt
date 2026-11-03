@@ -1,0 +1,9 @@
+# Runtime dependencies of dashboard/server.py: Python >= 3.11 (starlette 1.10.0); tested with Python 3.12, 2026-11-03.
+# Install:  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+fastapi==0.162.0
+starlette==1.10.0          # imported directly (starlette.concurrency)
+uvicorn==0.54.0            # plain uvicorn is enough (h11); no [standard] extras needed
+anyio==4.15.1              # imported directly (caps the sync thread pool at 6)
+psutil==7.2.2              # System view: CPU, RAM, disk, training processes; disk-space alert
+PyYAML==6.0.3              # runs/<id>/config.yaml data.cohorts/split -> auto phase progress (without it those phases stay manual)
+nvidia-ml-py==13.615.71    # optional: GPU stats through NVML (import pynvml); without it the server falls back to nvidia-smi
